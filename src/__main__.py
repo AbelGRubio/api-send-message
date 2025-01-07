@@ -1,7 +1,6 @@
 import uvicorn
 
-from app import APP, LOGGER, API_PORT, API_IP, LOG_CONFIG
-
+from app import APP, LOGGER, API_PORT, API_IP
 
 if __name__ == '__main__':
     LOGGER.debug("Starting...")

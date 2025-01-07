@@ -1,7 +1,10 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
 from ..configuration import __version__
+from ..models import EmailRequest
+from ..functions import send_message
+
 
 api_router = APIRouter()
 
@@ -16,3 +19,15 @@ def health() -> JSONResponse:
         content={'version': __version__},
         status_code=status_code
     )
+
+
+# Endpoint para enviar correos
+@api_router.post("/send-email")
+def send_email(email_request: EmailRequest):
+    try:
+        # Enviar correo
+        send_message(email_request)
+        return {"message": "Correo enviado con éxito"}
+    except Exception as e:
+        raise HTTPException(status_code=500,
+                            detail=f"Error al enviar el correo: {str(e)}")

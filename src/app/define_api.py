@@ -13,7 +13,6 @@ APP = FastAPI(
 
 APP.include_router(
     router=api_router,
-    prefix='/api',
     tags=["Service 1: API endpoints"]
 )
 

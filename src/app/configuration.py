@@ -13,7 +13,7 @@ config = configparser.ConfigParser()
 config.read(conf_file)
 
 API_IP = config.get('conf', "api_ip", fallback='0.0.0.0')
-API_PORT = int(os.getenv('API_PORT', 5001))
+API_PORT = int(os.getenv('PORT', 5001))
 API_KEY = os.getenv('API_KEY', 'token')
 SAVE_FOLDER = config.get('conf', 'SAVE_FOLDER', fallback='./save')
 MINUTES_REFRESH_CONF = config.getint('conf', "minutes_refresh_conf",
@@ -69,3 +69,8 @@ LOG_CONFIG = {
         },
     },
 }
+
+MAIL_FROM = os.getenv("MAIL_FROM", None)
+MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", None)
+
+

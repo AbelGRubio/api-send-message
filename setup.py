@@ -20,7 +20,7 @@ setup(
     author="app",
     author_email="app@gmail.es",
     keywords='development, setup, setuptools',
-    python_requires='>=3.8',
+    python_requires='>=3.12',
     url='https://gitlab.agrubio/general/backend-python.git',
     long_description=long_description,
     long_description_content_type="text/markdown",
