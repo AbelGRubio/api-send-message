@@ -29,3 +29,4 @@ def send_message(email_request: EmailRequest):
 
     except Exception as e:
         LOGGER.error(f"Error to send the mail: {e}")
+        raise e
