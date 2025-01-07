@@ -3,7 +3,7 @@ import os
 
 from .logger_api import LoggerApi
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 LOGGER = LoggerApi("api-messages")
 
