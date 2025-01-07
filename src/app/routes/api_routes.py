@@ -21,6 +21,11 @@ def health() -> JSONResponse:
     )
 
 
+@api_router.options("/send-email")
+def handle_options():
+    return {"status": "OK"}
+
+
 # Endpoint para enviar correos
 @api_router.post("/send-email")
 def send_email(email_request: EmailRequest):
