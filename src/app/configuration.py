@@ -73,4 +73,5 @@ LOG_CONFIG = {
 MAIL_FROM = os.getenv("MAIL_FROM", None)
 MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", None)
 
-
+if None in [MAIL_FROM, MAIL_PASSWORD]:
+    LOGGER.warning("Identification mail problem. ")
